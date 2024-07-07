@@ -33,23 +33,24 @@
 typeは**必須**です。  
 次のいずれかを`lowercase`で記述します。  
 
-| type    | 説明                                            |
-| :------ | :---------------------------------------------- |
-| build   | ビルドシステムや外部依存に関する変更            |
-| ci      | CIの設定ファイルやスクリプトの変更              |
-| docs    | ドキュメントのみの変更                          |
-| feat    | 機能の追加・変更・削除                          |
-| fix     | バグの修正                                      |
-| format  | コードの整形                                    |
-| improve | feat, fix, testに該当しない改善を目的とした変更 |
-| revert  | コミットの取り消し                              |
-| test    | テストの追加や変更                              |
-| chore   | 上記のいずれにも該当しないもの                  |
+| type     | 説明                                 |
+| :------- | :----------------------------------- |
+| build    | ビルドシステムや外部依存に関する変更 |
+| ci       | CIの設定ファイルやスクリプトの変更   |
+| docs     | ドキュメントのみの変更               |
+| feat     | 機能の追加・変更・削除               |
+| fix      | バグの修正                           |
+| perf     | パフォーマンスの改善を目的とした変更 |
+| refactor | 動作を変更しないコードの改善         |
+| revert   | コミットの取り消し                   |
+| test     | テストの追加・変更・削除             |
+| chore    | 上記のいずれにも該当しないもの       |
 
 ```example
 : some message     # bad
 foo: some message  # bad
 FIX: some message  # bad
+
 fix: some message  # good
 ```
 
@@ -75,6 +76,7 @@ feat:                # bad
 feat: Some Message   # bad
 feat: SOME MESSAGE   # bad
 feat: some message.  # bad
+
 feat: some message   # good
 ```
 
