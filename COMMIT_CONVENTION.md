@@ -9,7 +9,6 @@
   - [subject](#subject)
   - [body](#body)
   - [footer](#footer)
-- [Revert](#revert)
 - [BREAKING CHANGE](#breaking-change)
 
 ## Format
@@ -99,10 +98,10 @@ obsolete now.
 ### footer
 
 footerは**省略可能**です。  
-footerには[BREAKING CHANGE](#breaking-change)や[RevertするコミットのSHA](#revert)、Issueへの参照を記述します。  
+footerには[BREAKING CHANGE](#breaking-change)やRevertするコミットのSHA、Issueへの参照を記述します。  
 記述する場合には直前に1行空行を挿入しなければなりません。  
 
-参照を記述する場合には以下のようにします。
+参照を記述する場合には以下のようにします。  
 
 ```example
 revert: let us never again speak of the noodle incident
@@ -121,7 +120,7 @@ incoming responses other than from latest request.
 Closes #123
 ```
 
-複数のIssueへの参照を記述する場合には次のように`,`で区切ります。  
+複数のIssueをクローズする場合には次のように`,`で区切ります。  
 
 ```example
 fix: prevent racing of requests
@@ -130,23 +129,6 @@ Introduce a request id and a reference to latest request. Dismiss
 incoming responses other than from latest request.
 
 Closes #123, #456, #789
-```
-
-## Revert
-
-前のコミットを取り消す場合のtypeは`revert`でなくてはなりません。  
-また以下を遵守してください。  
-
-- subjectに取り消される内容を記述する
-- bodyに取り消す理由を記述する
-- footerに取り消すコミットのSHAを記述する
-
-```example
-revert: some message
-
-A clear description of the reason for reverting the commit message.
-
-Refs: 676104e, a215868
 ```
 
 ## BREAKING CHANGE
