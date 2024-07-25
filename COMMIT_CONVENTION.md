@@ -70,7 +70,6 @@ subjectは**必須**です。
 - 命令形や現在形の動詞で始める（e.g. `changed`や`changes`ではなく`change`）
 - 文頭は小文字にする
 - 文末に`.`を記述しない
-- typeを含めて72文字以内で記述する
 
 ```example
 feat:                # bad
