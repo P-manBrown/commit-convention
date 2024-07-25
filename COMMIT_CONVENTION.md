@@ -14,7 +14,7 @@
 
 ## Format
 
-コミットメッセージのフォーマットは次のとおりです。
+フォーマットは次のとおりです。
 
 ```example
 <type>[!]: <subject>
@@ -55,7 +55,7 @@ FIX: some message  # bad
 fix: some message  # good
 ```
 
-また破壊的変更の場合にはこれを強調するためにtypeの直後に`!`を記述できます。  
+また破壊的変更の場合にはこれを強調するためにtypeの直後に`!`を記述しなければなりません。  
 
 ```example
 feat!: some message
@@ -149,21 +149,13 @@ Refs: 676104e, a215868
 
 ## BREAKING CHANGE
 
-破壊的変更の場合には以下のいずれかまたは両方を行わなければなりません。  
+破壊的変更の場合にはtypeの直後に`!`を記述しなければなりません。  
 
-- typeの直後に`!`を記述する
-- footerを`BREAKING CHANGE:`で始め破壊的変更に関する説明を記述する
-
+またfooterを`BREAKING CHANGE:`で始め破壊的変更に関する説明を記述できます。  
 `BREAKING CHANGE:` はどのtypeのコミットにも含められます。  
 
 ```example
 chore!: drop support for Node 6
-```
-
-```example
-chore: drop support for Node 6
-
-BREAKING CHANGE: use JavaScript features not available in Node 6.
 ```
 
 ```example
