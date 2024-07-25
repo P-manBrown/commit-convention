@@ -84,12 +84,7 @@ feat: some message   # good
 
 bodyは**省略可能**です。  
 bodyには変更の理由などsubjectの詳細情報を記述します。  
-記述する場合には以下を遵守してください。  
-
-- bodyの前に1行空行を挿入する
-- 命令形や現在形の動詞で始める（e.g. changedやchangesではなくchange）
-- `Sentence case`で記述する
-- 各行72文字までで記述する
+記述する場合には直前に1行空行を挿入しなければなりません。  
 
 ```example
 fix: prevent racing of requests
@@ -107,7 +102,15 @@ footerは**省略可能**です。
 footerには[BREAKING CHANGE](#breaking-change)や[RevertするコミットのSHA](#revert)、Issueへの参照を記述します。  
 記述する場合には直前に1行空行を挿入しなければなりません。  
 
-Issueへの参照を記述する場合には以下のようにします。  
+参照を記述する場合には以下のようにします。
+
+```example
+revert: let us never again speak of the noodle incident
+
+Refs 676104e, a215868
+```
+
+Issueをクローズする場合には以下のようにします。  
 
 ```example
 fix: prevent racing of requests
