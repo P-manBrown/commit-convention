@@ -97,7 +97,7 @@ obsolete now.
 ### footer
 
 footerは**省略可能**です。  
-footerには[BREAKING CHANGE](#breaking-change)やRevertするコミットのSHA、Issueへの参照を記述します。  
+footerには[BREAKING CHANGE](#breaking-change)やRevertするコミットのSHA、Issueへの参照などを記述します。  
 記述する場合には直前に1行空行を挿入しなければなりません。  
 
 参照を記述する場合には以下のようにします。  
@@ -105,7 +105,7 @@ footerには[BREAKING CHANGE](#breaking-change)やRevertするコミットのSHA
 ```example
 revert: let us never again speak of the noodle incident
 
-Refs 676104e, a215868
+Refs: 676104e, a215868
 ```
 
 Issueをクローズする場合には以下のようにします。  
@@ -116,10 +116,10 @@ fix: prevent racing of requests
 Introduce a request id and a reference to latest request. Dismiss
 incoming responses other than from latest request.
 
-Closes #123
+Closes: #123
 ```
 
-複数のIssueをクローズする場合には次のように`,`で区切ります。  
+複数のIssueをクローズする場合には次のように`Closes:`を繰り返し記述します。  
 
 ```example
 fix: prevent racing of requests
@@ -127,7 +127,9 @@ fix: prevent racing of requests
 Introduce a request id and a reference to latest request. Dismiss
 incoming responses other than from latest request.
 
-Closes #123, #456, #789
+Closes: #123
+Closes: #456
+Closes: #789
 ```
 
 ## BREAKING CHANGE
