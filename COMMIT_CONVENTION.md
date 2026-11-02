@@ -53,6 +53,22 @@ FIX: some message  # bad
 fix: some message  # good
 ```
 
+外部依存の変更は、本番用か開発用かを問わず`build`とします。  
+`build`と`chore`は、「どこで使うか」ではなく「依存を変えたか、設定を変えたか」で判定します。  
+
+| 変更内容                                                                                                  | type  |
+| :-------------------------------------------------------------------------------------------------------- | :---- |
+| 外部依存（gem・npmパッケージ・Docker image・Dev Container Feature・Gitのサブモジュール等）の追加・削除・版の変更 | build |
+| 開発環境の設定の変更（依存の版以外。e.g. `devcontainer.json`のオプション、エディタの設定）                   | chore |
+
+```example
+chore: bump rubocop to 1.81.0                 # bad（開発用の依存でもbuild）
+build: enable format on save in the editor    # bad（依存の版以外の設定はchore）
+
+build: bump rubocop to 1.81.0                 # good
+chore: enable format on save in the editor    # good
+```
+
 また破壊的変更の場合にはこれを強調するためにtypeの直後に`!`を記述しなければなりません。  
 
 ```example
